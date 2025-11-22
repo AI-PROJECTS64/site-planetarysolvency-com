@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>PlanetarySolvency.com — Planetary Solvency for Human Prosperity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PlanetarySolvency.com — actif stratégique de nommage pour porter un Planetary Solvency Dashboard, un observatoire des risques planétaires et un hub entre actuaires, banques centrales, superviseurs et institutions financières.">
+  <meta name="description" content="PlanetarySolvency.com — strategic naming asset for a Planetary Solvency Dashboard, a planetary risk observatory and a hub between actuaries, central banks, supervisors and financial institutions.">
   <link rel="canonical" href="https://www.planetarysolvency.com/" />
   <link rel="alternate" href="https://www.planetarysolvency.com/" hreflang="fr" />
   <link rel="alternate" href="https://www.planetarysolvency.com/" hreflang="en" />
@@ -390,14 +390,14 @@
         </div>
       </div>
       <div class="lang-switch" aria-label="Langues / Languages">
-        <button id="btn-fr" class="lang-btn active" data-lang="fr" type="button" aria-pressed="true">FR</button>
-        <button id="btn-en" class="lang-btn" data-lang="en" type="button" aria-pressed="false">EN</button>
+        <button id="btn-fr" class="lang-btn" data-lang="fr" type="button" aria-pressed="false">FR</button>
+        <button id="btn-en" class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button>
       </div>
     </header>
 
     <main>
       <!-- HERO FR -->
-      <section class="hero" data-fr>
+      <section class="hero" data-fr hidden>
         <div class="hero-main">
           <div class="badge-asset">
             <span class="badge-dot"></span>
@@ -448,7 +448,7 @@
       </section>
 
       <!-- HERO EN -->
-      <section class="hero" data-en hidden>
+      <section class="hero" data-en>
         <div class="hero-main">
           <div class="badge-asset">
             <span class="badge-dot"></span>
@@ -500,7 +500,7 @@
 
       <div class="content">
         <!-- FRANÇAIS -->
-        <div data-fr>
+        <div data-fr hidden>
           <section id="value-fr">
             <h2>Pourquoi parler de «&nbsp;solvabilité planétaire&nbsp;» maintenant&nbsp;?</h2>
             <p>
@@ -601,8 +601,8 @@
           <section>
             <h2>Documents / Briefs</h2>
             <p>
-              Brief d’acquisition détaillé (2025-11) disponible en français et en anglais
-              pour les équipes Board, Climat / CO₂, Risques, Actuariat, Data/IA, Finance &amp; Juridique.
+              Brief d’acquisition détaillé (2025-11) disponible en français pour les équipes
+              Board, Climat / CO₂, Risques, Actuariat, Data/IA, Finance &amp; Juridique.
             </p>
             <div class="cta-row">
               <a class="btn-ghost" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
@@ -610,12 +610,6 @@
               </a>
               <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-FR-202511.pdf" type="application/pdf">
                 📥 Télécharger (FR, PDF)
-              </a>
-              <a class="btn-ghost" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-                👁️ Open Brief (EN)
-              </a>
-              <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-EN-202511.pdf" type="application/pdf">
-                📥 Download (EN, PDF)
               </a>
             </div>
           </section>
@@ -657,7 +651,7 @@
         </div>
 
         <!-- ENGLISH -->
-        <div data-en hidden>
+        <div data-en>
           <section id="value-en">
             <h2>Why talk about “Planetary Solvency” now?</h2>
             <p>
@@ -759,7 +753,7 @@
           <section>
             <h2>Documents / Briefs</h2>
             <p>
-              Detailed acquisition brief (2025-11) available in English and French for
+              Detailed acquisition brief (2025-11) available in English for
               Boards, Climate / CO₂, Risk, Actuarial, Data/AI, Finance &amp; Legal teams.
             </p>
             <div class="cta-row">
@@ -768,12 +762,6 @@
               </a>
               <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-EN-202511.pdf" type="application/pdf">
                 📥 Download (EN, PDF)
-              </a>
-              <a class="btn-ghost" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-                👁️ Ouvrir le Brief (FR)
-              </a>
-              <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-FR-202511.pdf" type="application/pdf">
-                📥 Télécharger (FR, PDF)
               </a>
             </div>
           </section>
@@ -840,13 +828,17 @@
       enBtn.classList.toggle('active', lang === 'en');
       frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
       enBtn.setAttribute('aria-pressed', String(lang === 'en'));
+
       document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
     };
 
     frBtn.addEventListener('click', () => show('fr'));
     enBtn.addEventListener('click', () => show('en'));
 
-    show('fr');
+    // Détection simple : FR si navigateur en français, sinon EN
+    const navLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2).toLowerCase();
+    const initialLang = navLang === 'fr' ? 'fr' : 'en';
+    show(initialLang);
   </script>
 </body>
 </html>
