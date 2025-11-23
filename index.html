@@ -1,12 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PlanetarySolvency.com — Planetary Solvency for Human Prosperity</title>
-  <meta name="description" content="PlanetarySolvency.com — strategic digital asset for the concept of Planetary Solvency: a banner for dashboards, observatories and multi-stakeholder programmes linking planetary boundaries, climate & nature risks and financial solvency.">
-
-  <!-- Canonical & hreflang -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PlanetarySolvency.com — strategic naming asset for a Planetary Solvency Dashboard, a planetary risk observatory and a hub between actuaries, central banks, supervisors and financial institutions.">
   <link rel="canonical" href="https://www.planetarysolvency.com/" />
   <link rel="alternate" href="https://www.planetarysolvency.com/" hreflang="fr" />
   <link rel="alternate" href="https://www.planetarysolvency.com/" hreflang="en" />
@@ -16,11 +14,10 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PlanetarySolvency.com — Planetary Solvency for Human Prosperity" />
-  <meta property="og:description" content="PlanetarySolvency.com — natural banner for a Planetary Solvency Dashboard and planetary risk observatory, aimed at central banks, supervisors, states and long-term investors." />
+  <meta property="og:description" content="The natural banner for a Planetary Solvency Dashboard and planetary risk observatory, aimed at central banks, supervisors, states and long-term investors." />
   <meta property="og:url" content="https://www.planetarysolvency.com/" />
   <meta property="og:image" content="https://www.planetarysolvency.com/assets/og-planetarysolvency.jpg" />
   <meta property="og:image:alt" content="PlanetarySolvency.com — Planetary Solvency for Human Prosperity" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PlanetarySolvency.com — Planetary Solvency for Human Prosperity" />
   <meta name="twitter:description" content="Strategic naming asset for a Planetary Solvency Dashboard and systemic climate & nature risk observatory." />
@@ -40,7 +37,9 @@
     "url": "https://www.planetarysolvency.com/",
     "description": "PlanetarySolvency.com est un actif stratégique de nommage pour un Planetary Solvency Dashboard, un observatoire des risques planétaires et un hub multi-acteurs entre actuaires, banques centrales, superviseurs et institutions financières.",
     "inLanguage": ["fr-FR","en-GB","en-US"],
-    "sameAs": ["https://www.linkedin.com/company/planetarysolvency"],
+    "sameAs": [
+      "https://www.linkedin.com/company/planetarysolvency"
+    ],
     "logo": "https://www.planetarysolvency.com/assets/logo-planetarysolvency.png",
     "potentialAction": {
       "@type": "CommunicateAction",
@@ -49,423 +48,795 @@
   }
   </script>
 
-  <!-- Styles -->
   <style>
-    :root{
-      --bg:#020815;
-      --card:#081120;
-      --muted:#8791b0;
-      --text:#e8eefc;
-      --accent:#7fd0ff;
-      --chip:#101b34;
-      --shadow:0 10px 30px rgba(0,0,0,.45);
-      --radius:18px
+    :root {
+      --bg: #04050a;
+      --bg-alt: #070a14;
+      --accent: #6ce0ff;
+      --accent-soft: rgba(108, 224, 255, 0.12);
+      --text-main: #f5f7ff;
+      --text-muted: #a4acc7;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --danger: #ff6b6b;
+      --max-width: 1120px;
+      --radius-xl: 20px;
     }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--text);
-      font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1220 0, #020312 55%, #000000 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1040px;margin:0 auto;padding:28px}
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin:8px 0 22px
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      padding: 32px 16px;
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--chip);
-      border:1px solid #1d2946;
-      border-radius:999px;
-      padding:6px 12px;
-      color:#c1ccec;
-      font-size:13px
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: auto;
+      background: linear-gradient(145deg, rgba(12, 19, 41, 0.98), rgba(3, 7, 18, 0.98));
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.75);
+      padding: 32px 24px 32px;
     }
-    .lang{
-      gap:10px;
-      display:flex;
-      align-items:center
+
+    @media (min-width: 960px) {
+      .page { padding: 36px 40px 40px; }
     }
-    .lang button{
-      background:var(--chip);
-      color:var(--text);
-      border:1px solid #1d2946;
-      padding:7px 12px;
-      border-radius:999px;
-      cursor:pointer
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
     }
-    .lang button[aria-pressed="true"]{
-      background:var(--accent);
-      color:#020815;
-      border-color:transparent
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .card{
-      background:var(--card);
-      border:1px solid #1d2946;
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:var(--shadow)
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: radial-gradient(circle at 20% 10%, #6ce0ff 0, #1a3a5f 45%, #050816 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:40px;
-      letter-spacing:.4px
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .hero h1 span{color:var(--accent)}
-    .cta{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin:18px 0 6px
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#122143;
-      color:#fff;
-      border:1px solid #21325b;
-      padding:11px 16px;
-      border-radius:999px;
-      cursor:pointer;
-      text-decoration:none;
-      font-size:14px
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #e5edff;
     }
-    .btn.primary{
-      background:var(--accent);
-      color:#020815;
-      border-color:transparent
+
+    .brand-tag {
+      font-size: 11px;
+      color: var(--text-muted);
     }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:18px
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(7, 13, 31, 0.95);
+      overflow: hidden;
+      font-size: 12px;
     }
-    .col-6{grid-column:span 6}
-    .col-12{grid-column:span 12}
-    .chip{
-      display:inline-block;
-      background:var(--chip);
-      border:1px solid #1d2946;
-      border-radius:999px;
-      padding:6px 10px;
-      font-size:13px;
-      color:#c1ccec
+
+    .lang-btn {
+      padding: 6px 12px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font: inherit;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.18s ease, color 0.18s ease;
     }
-    .chips-wrap{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
-    .list{
-      display:grid;
-      gap:10px;
-      margin:8px 0
+
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
     }
-    .muted{color:var(--muted)}
-    .foot{opacity:.8;font-size:13px;margin-top:24px}
-    img.logo{
-      max-width:260px;
-      height:auto;
-      display:block;
-      margin:10px 0 10px;
-      opacity:.97;
-      border-radius:14px
+
+    .badge-asset {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(12, 148, 136, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: #bbf7d0;
+      font-size: 11px;
+      margin-bottom: 10px;
     }
-    @media (max-width:860px){
-      .col-6{grid-column:span 12}
-      .hero h1{font-size:32px}
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #4ade80 0, #16a34a 50%, #052e16 100%);
+      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.18);
     }
-    .ico{width:16px;height:16px;display:inline-block;vertical-align:middle}
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.4fr);
+        align-items: flex-start;
+      }
+    }
+
+    .hero-main h1 {
+      font-size: clamp(26px, 3vw, 32px);
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .hero-main h1 span { color: var(--accent); }
+
+    .hero-baseline {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hero-side {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.98));
+      padding: 16px 16px 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-side-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #e5edff;
+    }
+
+    .hero-side ul {
+      margin: 0 0 8px 18px;
+      padding: 0;
+    }
+
+    .hero-side li { margin-bottom: 4px; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      border-color: rgba(56, 189, 248, 0.3);
+      color: #02141f;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 35px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.85);
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 0.6);
+    }
+
+    main { margin-top: 12px; }
+
+    .content { margin-top: 12px; }
+
+    section {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: rgba(8, 13, 33, 0.98);
+      padding: 16px 16px 18px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    section h2 {
+      font-size: 15px;
+      margin: 0 0 6px;
+      color: #e5edff;
+    }
+
+    section h3 {
+      font-size: 13px;
+      margin: 10px 0 4px;
+      color: #e5edff;
+    }
+
+    section p { margin: 0 0 6px; }
+
+    section ul {
+      margin: 0 0 4px 18px;
+      padding: 0;
+    }
+
+    section li { margin-bottom: 4px; }
+
+    .disclaimer {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(248, 250, 252, 0.1);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .disclaimer strong { color: #e5edff; }
+
+    .disclaimer p { margin: 0 0 4px; }
+
+    footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-right { opacity: 0.7; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="badge" data-fr>Actif numérique disponible à l’acquisition</div>
-      <div class="badge" data-en hidden>Strategic digital asset available for acquisition</div>
-      <div class="lang">
-        <button id="btn-fr" aria-pressed="false">FR</button>
-        <button id="btn-en" aria-pressed="true">EN</button>
-      </div>
-    </div>
-
-    <!-- =============== HERO FR =============== -->
-    <section class="card hero" data-fr>
-      <h1>PlanetarySolvency.com<br><span>Planetary Solvency for Human Prosperity</span></h1>
-      <img class="logo" src="/assets/logo-planetarysolvency.png" alt="PlanetarySolvency.com" loading="eager">
-      <p class="muted">
-        Nom de domaine <b>descriptif</b> pour la notion de <b>« Planetary Solvency »</b> :
-        la capacité de notre <b>système planétaire</b> – climat, biosphère, ressources, stabilité sociale –
-        à rester compatible avec la <b>prospérité humaine</b> et la stabilité financière à long terme.<br>
-        Conçu comme <b>bannière neutre</b> pour un <b>Planetary Solvency Dashboard</b>,
-        un <b>observatoire des risques planétaires</b> et un cadre reliant limites planétaires,
-        risques climat &amp; nature, résilience sociale et solvabilité macro-financière.<br>
-        Ce nom permet de sécuriser un <b>monopole sémantique crédible</b> sur « Planetary Solvency »
-        auprès de boards, banques centrales, superviseurs, ministères et investisseurs de long terme.<br>
-        <b>Offres sérieuses uniquement</b> (institutions publiques, coalitions internationales,
-        banques centrales &amp; superviseurs, investisseurs systémiques, grandes institutions financières).
-      </p>
-      <div class="chips-wrap">
-        <span class="chip">Planetary Solvency Dashboard</span>
-        <span class="chip">Limites planétaires &amp; prospérité</span>
-        <span class="chip">Banques centrales &amp; superviseurs</span>
-        <span class="chip">Actuaires &amp; investisseurs long terme</span>
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Proposition&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20obtenir%20votre%20NDA%20et%2Fou%20proposer%20une%20offre%20pour%20PlanetarySolvency.com.%0D%0AEntreprise%20%3A%20%0D%0ANom%20%2F%20Fonction%20%3A%20%0D%0AUsage%20pr%C3%A9vu%20%3A%20%0D%0ABudget%20indicatif%20%3A%20%0D%0A%0D%0ACordialement%2C">
-          Proposer une offre / Demander un NDA
-        </a>
-        <a class="btn" href="#value-fr">Pourquoi ce nom ?</a>
-        <a class="btn" href="https://www.linkedin.com/company/planetarysolvency" target="_blank" rel="noopener" aria-label="Ouvrir la page LinkedIn PlanetarySolvency">
-          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-      <p class="muted" style="margin-top:8px">
-        Les travaux sur les <b>limites planétaires</b> et les risques climat &amp; nature
-        convergent vers une idée simple : si le « tableau de bord planétaire » bascule durablement
-        en zone rouge, la question centrale devient celle de la <b>solvabilité planétaire</b> :
-        dans quelle mesure nos économies, nos systèmes financiers et nos sociétés restent-ils
-        solvables sous ces trajectoires&nbsp;?<br>
-        <b>Nota :</b> PlanetarySolvency.com est un <b>actif sémantique descriptif</b>.
-        Il ne constitue ni une autorité publique, ni un superviseur, ni une agence de notation,
-        ni un service régulé. <b>Aucun conseil juridique, financier, scientifique ou fiscal n’est fourni.</b>
-      </p>
-    </section>
-
-    <!-- =============== VALUE FR =============== -->
-    <section id="value-fr" class="card" style="margin-top:16px" data-fr>
-      <div class="grid">
-        <div class="col-6">
-          <h3>Pourquoi PlanetarySolvency.com a de la valeur</h3>
-          <div class="list">
-            <div class="chip">Langage simple reliant limites planétaires, prospérité et solvabilité</div>
-            <div class="chip">Cadre neutre pour dashboards &amp; observatoires « Planetary Solvency »</div>
-            <div class="chip">Narratif durable au-dessus des données, scénarios et modèles existants</div>
-            <div class="chip">.com global exact-match — actif défensif si « Planetary Solvency » se généralise</div>
-            <div class="chip">Monopole sémantique crédible sur « Planetary Solvency »</div>
-          </div>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="/assets/logo-planetarysolvency.png" alt="PlanetarySolvency.com logo" />
         </div>
-        <div class="col-6">
-          <h3>Exemples de cas d’usage</h3>
-          <div class="list">
-            <div class="chip">Dashboard « Planetary Solvency » pour banque centrale / superviseur</div>
-            <div class="chip">Observatoire global des risques planétaires et de la prospérité</div>
-            <div class="chip">Cadre d’investissement Planetary Solvency pour fonds souverain / asset owner</div>
-            <div class="chip">Programme multi-acteurs science–finance–politiques publiques</div>
-          </div>
+        <div class="brand-text">
+          <div class="brand-name">PlanetarySolvency.com</div>
+          <div class="brand-tag">Planetary Solvency for Human Prosperity</div>
         </div>
       </div>
-      <p class="muted">
-        Ce site ne vend <b>ni produits financiers, ni services de notation, ni labels officiels</b> :
-        uniquement le nom de domaine <b>PlanetarySolvency.com</b>, en tant qu’actif numérique descriptif.
-        L’acquéreur reste seul responsable de ses contenus, méthodologies, outils et obligations réglementaires.
-      </p>
-    </section>
-
-    <!-- =============== CONTEXTE FR =============== -->
-    <section class="card" style="margin-top:16px" data-fr>
-      <h3>Positionnement « Planetary Solvency »</h3>
-      <p class="muted">
-        PlanetarySolvency.com peut coiffer une architecture plus large reliant
-        <b>climat, nature, ressources, énergie, stabilité sociale</b> et solvabilité macro-financière.
-        Il peut être articulé avec des cadres thématiques (par exemple Climate Solvency, Nature Solvency,
-        Water Solvency, Energy Solvency, Compute Solvency) sans que ce site ne propose à la vente
-        d’autres noms que PlanetarySolvency.com.
-      </p>
-      <p class="muted">
-        Le domaine offre une bannière lisible pour des audiences haut niveau
-        (boards, gouverneurs, ministres, directeurs de supervision, coalitions internationales)
-        qui ont besoin d’un <b>langage commun</b> pour parler de solvabilité à l’échelle planétaire.
-      </p>
-    </section>
-
-    <!-- =============== ACQUISITION FR =============== -->
-    <section class="card" style="margin-top:16px" data-fr>
-      <h3>Acquisition (process sécurisé)</h3>
-      <p class="muted">
-        Process type : NDA &rarr; échanges stratégiques &rarr; offre formelle &rarr; escrow &rarr; transfert du domaine.
-        L’actif cédé est exclusivement le nom de domaine <b>PlanetarySolvency.com</b>, sans services de conseil,
-        de modélisation ou de notation réglementée.
-      </p>
-      <a class="btn primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Proposition">
-        Contact direct : contact@planetarysolvency.com
-      </a>
-    </section>
-
-    <!-- =============== DOCS FR =============== -->
-    <section class="card" style="margin-top:16px" data-fr>
-      <h3>Documents / Briefs</h3>
-      <p class="muted">
-        Brief d’acquisition détaillé PlanetarySolvency.com (2025-11) disponible en français
-        pour les équipes Board, Climat/CO₂, Risques, Actuariat, Data/IA, Finance &amp; Juridique.
-      </p>
-      <div class="cta">
-        <a class="btn" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-          👁️ Ouvrir le Brief (FR)
-        </a>
-        <a class="btn primary" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-FR-202511.pdf" type="application/pdf">
-          📥 Télécharger (FR, PDF)
-        </a>
+      <div class="lang-switch" aria-label="Langues / Languages">
+        <button id="btn-fr" class="lang-btn" data-lang="fr" type="button" aria-pressed="false">FR</button>
+        <button id="btn-en" class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button>
       </div>
-    </section>
+    </header>
 
-    <!-- =============== HERO EN =============== -->
-    <section class="card hero" data-en hidden>
-      <h1>PlanetarySolvency.com<br><span>Planetary Solvency for Human Prosperity</span></h1>
-      <img class="logo" src="/assets/logo-planetarysolvency.png" alt="PlanetarySolvency.com" loading="eager">
-      <p class="muted">
-        <b>Descriptive .com domain</b> for the concept of <b>“Planetary Solvency”</b>:
-        the ability of our <b>planetary system</b> – climate, biosphere, resources, social stability –
-        to remain compatible with <b>human prosperity</b> and long-term financial soundness.<br>
-        Designed as a <b>neutral banner</b> for a <b>Planetary Solvency Dashboard</b>,
-        a <b>planetary risk observatory</b> and frameworks linking planetary boundaries,
-        climate &amp; nature risks, social resilience and macro-financial solvency.<br>
-        It offers a credible <b>semantic monopoly</b> on “Planetary Solvency” at Board, central bank,
-        supervisory and long-term investor level.<br>
-        <b>Serious offers only</b> (public institutions, international coalitions, central banks
-        &amp; supervisors, systemic investors, major financial institutions).
-      </p>
-      <div class="chips-wrap">
-        <span class="chip">Planetary Solvency Dashboard</span>
-        <span class="chip">Planetary boundaries &amp; prosperity</span>
-        <span class="chip">Central banks &amp; supervisors</span>
-        <span class="chip">Actuaries &amp; long-term investors</span>
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Offer&body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20NDA%20and%2For%20submit%20an%20offer%20for%20PlanetarySolvency.com.%0D%0ACompany%3A%20%0D%0AName%20%2F%20Role%3A%20%0D%0AIntended%20use%3A%20%0D%0ABudget%20range%3A%20%0D%0ABest%2C">
-          Submit an offer / Request NDA
-        </a>
-        <a class="btn" href="#value-en">Why this name?</a>
-        <a class="btn" href="https://www.linkedin.com/company/planetarysolvency" target="_blank" rel="noopener" aria-label="Open PlanetarySolvency on LinkedIn">
-          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-      <p class="muted" style="margin-top:8px">
-        Planetary boundaries and climate / nature risk frameworks increasingly lead to a simple question:
-        if the global dashboard stays in the red, what happens to <b>planetary solvency</b> — and thus
-        to the solvency of our economies, financial systems and societies?<br>
-        <b>Note:</b> PlanetarySolvency.com is a <b>descriptive semantic asset</b>.
-        It is not a public authority, not a supervisor, not a rating agency and not a regulated service.
-        <b>No legal, financial, scientific or tax advice is provided.</b>
-      </p>
-    </section>
-
-    <!-- =============== VALUE EN =============== -->
-    <section id="value-en" class="card" style="margin-top:16px" data-en hidden>
-      <div class="grid">
-        <div class="col-6">
-          <h3>Why PlanetarySolvency.com is valuable</h3>
-          <div class="list">
-            <div class="chip">Connects planetary boundaries, prosperity and solvency in Board-readable language</div>
-            <div class="chip">Neutral banner for Planetary Solvency dashboards &amp; observatories</div>
-            <div class="chip">Long-lived narrative above existing data, models and scenarios</div>
-            <div class="chip">Exact-match global .com — defensive asset if “Planetary Solvency” becomes a recognised concept</div>
-            <div class="chip">Credible semantic monopoly on the phrase “Planetary Solvency”</div>
+    <main>
+      <!-- HERO FR -->
+      <section class="hero" data-fr hidden>
+        <div class="hero-main">
+          <div class="badge-asset">
+            <span class="badge-dot"></span>
+            <span>Actif numérique stratégique — Solvabilité planétaire</span>
+          </div>
+          <h1>
+            Planetary Solvency<br />
+            <span>for Human Prosperity</span>
+          </h1>
+          <p class="hero-baseline">
+            PlanetarySolvency.com est la bannière naturelle pour un
+            <strong>Planetary Solvency Dashboard</strong> et un
+            <strong>observatoire des risques planétaires</strong>, à la croisée des
+            <em>actuaires, banques centrales, superviseurs et institutions financières</em>.
+          </p>
+          <div class="hero-grid">
+            <div class="chip">Planetary Solvency Dashboard</div>
+            <div class="chip">Risques systémiques climat &amp; nature</div>
+            <div class="chip">Banques centrales &amp; superviseurs</div>
+            <div class="chip">Actuaires &amp; investisseurs long terme</div>
           </div>
         </div>
-        <div class="col-6">
-          <h3>Illustrative use cases</h3>
-          <div class="list">
-            <div class="chip">Central bank / supervisor “Planetary Solvency &amp; Systemic Risks” programme</div>
-            <div class="chip">Planetary risk observatory for climate, nature, resources &amp; social stability</div>
-            <div class="chip">Planetary Solvency investment framework for a sovereign fund / asset owner</div>
-            <div class="chip">Multi-stakeholder initiative connecting science, finance &amp; public policy</div>
+
+        <aside class="hero-side">
+          <div class="hero-side-title">Ce que porte PlanetarySolvency.com</div>
+          <ul>
+            <li>Un nom neutre, sérieux, compréhensible au niveau board / banque centrale.</li>
+            <li>Une bannière unique pour les risques planétaires : climat, nature, stabilité sociale.</li>
+            <li>Un point d’entrée naturel pour un <em>Planetary Solvency Risk Dashboard</em>.</li>
+          </ul>
+          <p>
+            Le domaine peut héberger un tableau de bord inspiré des travaux d’actuaires
+            et d’institutions publiques, sans se substituer à elles&nbsp;: il fournit la
+            <strong>bannière numérique</strong>, pas un avis officiel ni un label réglementaire.
+          </p>
+          <div class="cta-row">
+            <a class="btn-primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Proposition">
+              Contact acquisition / partenariat
+            </a>
+            <a class="btn-ghost" href="#value-fr">
+              Comprendre le rôle du nom
+            </a>
+            <a class="btn-ghost" href="https://www.linkedin.com/company/planetarysolvency" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- HERO EN -->
+      <section class="hero" data-en>
+        <div class="hero-main">
+          <div class="badge-asset">
+            <span class="badge-dot"></span>
+            <span>Strategic digital asset — Planetary Solvency</span>
+          </div>
+          <h1>
+            Planetary Solvency<br />
+            <span>for Human Prosperity</span>
+          </h1>
+          <p class="hero-baseline">
+            PlanetarySolvency.com is the natural banner for a
+            <strong>Planetary Solvency Dashboard</strong> and a
+            <strong>planetary risk observatory</strong>, at the intersection of
+            <em>actuaries, central banks, supervisors and financial institutions</em>.
+          </p>
+          <div class="hero-grid">
+            <div class="chip">Planetary Solvency Dashboard</div>
+            <div class="chip">Systemic climate &amp; nature risks</div>
+            <div class="chip">Central banks &amp; supervisors</div>
+            <div class="chip">Actuaries &amp; long-term investors</div>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="hero-side-title">What PlanetarySolvency.com can carry</div>
+          <ul>
+            <li>A neutral, serious name readable at board / central bank level.</li>
+            <li>A single banner for planetary risks: climate, nature, social stability.</li>
+            <li>A natural front door for a <em>Planetary Solvency Risk Dashboard</em>.</li>
+          </ul>
+          <p>
+            The domain can host a dashboard inspired by work from actuaries and public
+            institutions, without replacing them&nbsp;: it provides the
+            <strong>digital banner</strong>, not an official opinion nor a regulated label.
+          </p>
+          <div class="cta-row">
+            <a class="btn-primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Offer">
+              Acquisition / partnership contact
+            </a>
+            <a class="btn-ghost" href="#value-en">
+              Understand the role of the name
+            </a>
+            <a class="btn-ghost" href="https://www.linkedin.com/company/planetarysolvency" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <div class="content">
+        <!-- FRANÇAIS -->
+        <div data-fr hidden>
+          <section id="value-fr">
+            <h2>Pourquoi parler de «&nbsp;solvabilité planétaire&nbsp;» maintenant&nbsp;?</h2>
+            <p>
+              Depuis 2024–2025, la notion de <strong>solvabilité planétaire</strong> dépasse la métaphore.
+              Elle devient un cadre de risque assumé par une partie du monde actuariel et des institutions
+              publiques, qui soulignent que plusieurs <em>limites planétaires</em> sont déjà franchies
+              et que le tableau de bord global s’approche de zones rouges.
+            </p>
+            <p>
+              Les risques climat &amp; nature ne sont plus seulement vus comme des enjeux environnementaux,
+              mais comme des <strong>risques macroéconomiques et financiers</strong> susceptibles de peser
+              lourdement sur la croissance, la stabilité financière, les dettes publiques et privées.
+            </p>
+            <p>
+              La question n’est donc plus uniquement la «&nbsp;finance verte&nbsp;», mais bien&nbsp;:
+              <em>dans quelle mesure notre système planétaire — et donc nos économies et sociétés —
+              reste-t-il solvable sous les trajectoires actuelles&nbsp;?</em>
+            </p>
+          </section>
+
+          <section>
+            <h2>Rôle de PlanetarySolvency.com</h2>
+            <p>
+              PlanetarySolvency.com est conçu comme un <strong>actif de nommage stratégique</strong> pour&nbsp;:
+            </p>
+            <ul>
+              <li>un <strong>Planetary Solvency Dashboard</strong> destiné aux décideurs publics et financiers&nbsp;;</li>
+              <li>un <strong>observatoire des risques planétaires</strong> (climat, nature, ressources, stabilité sociale)&nbsp;;</li>
+              <li>un <strong>hub de convergence</strong> entre actuaires, banques centrales, superviseurs, investisseurs long terme et coalitions internationales.</li>
+            </ul>
+            <p>
+              Le domaine offre un nom neutre, sérieux, immédiatement compréhensible pour un
+              <strong>board</strong>, un ministre, une banque centrale ou un superviseur.
+            </p>
+            <p>
+              Il peut être positionné au-dessus d’un <strong>Global Solvency Framework</strong> combinant
+              des actifs comme <b>ClimateSolvency.com</b>, <b>NatureSolvency.com</b>,
+              <b>WaterSolvency.com</b>, <b>EnergySolvency.com</b> ou <b>ComputeSolvency.com</b>.
+            </p>
+          </section>
+
+          <section>
+            <h2>Ce que peut héberger PlanetarySolvency.com</h2>
+
+            <h3>1. Planetary Solvency Risk Dashboard</h3>
+            <p>
+              Un tableau de bord synthétique peut afficher, de façon lisible pour un board&nbsp;:
+            </p>
+            <ul>
+              <li>les niveaux de dépassement des limites planétaires&nbsp;;</li>
+              <li>une vue intégrée «&nbsp;prosperity &amp; solvency&nbsp;» climat + nature&nbsp;;</li>
+              <li>des signaux d’alerte lisibles (vert / orange / rouge) pour la politique publique et la supervision financière.</li>
+            </ul>
+
+            <h3>2. Observatoire &amp; centre de ressources</h3>
+            <p>
+              Le site peut rassembler les principaux concepts et ressources&nbsp;:
+            </p>
+            <ul>
+              <li>limites planétaires, risques climat &amp; nature, indicateurs de solvabilité planétaire&nbsp;;</li>
+              <li>rapports, scénarios, méthodologies, bonnes pratiques&nbsp;;</li>
+              <li>liens vers les travaux d’actuaires, de banques centrales, de superviseurs et d’institutions financières alignées sur les cadres climat &amp; nature.</li>
+            </ul>
+
+            <h3>3. Programme multi-acteurs</h3>
+            <p>
+              PlanetarySolvency.com peut enfin servir de bannière à un
+              <strong>programme multi-acteurs</strong> associant actuaires, universités, banques
+              centrales, régulateurs, institutions financières, ONG et coalitions climat / nature.
+            </p>
+          </section>
+
+          <section>
+            <h2>Exemples d’usages institutionnels</h2>
+            <ul>
+              <li>
+                <strong>Banque centrale / superviseur financier</strong> – bannière publique pour un
+                programme «&nbsp;Planetary Solvency &amp; Systemic Risks&nbsp;», avec publication de scénarios,
+                stress tests, tableaux de bord et notes macroprudentielles.
+              </li>
+              <li>
+                <strong>Ministère des Finances / think tank souverain</strong> – rapports périodiques
+                de solvabilité planétaire nationale ou régionale, alignant politiques climat, nature,
+                énergie, social et trajectoires de prospérité durable.
+              </li>
+              <li>
+                <strong>Investisseur long terme / fonds souverain</strong> – cadre d’investissement
+                «&nbsp;Planetary Solvency&nbsp;», reliant allocation du capital, risques systémiques
+                climat/nature et stabilité de long terme.
+              </li>
+              <li>
+                <strong>Coalition climat / biodiversité</strong> – bannière pour un partenariat multi-acteurs
+                articulant science, finance, politique publique et société civile.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Documents / Briefs</h2>
+            <p>
+              Brief d’acquisition détaillé (2025-11) disponible en français pour les équipes
+              Board, Climat / CO₂, Risques, Actuariat, Data/IA, Finance &amp; Juridique.
+            </p>
+            <div class="cta-row">
+              <a class="btn-ghost" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
+                👁️ Ouvrir le Brief (FR)
+              </a>
+              <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-FR-202511.pdf" type="application/pdf">
+                📥 Télécharger (FR, PDF)
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <h2>À propos de l’actif &amp; cession</h2>
+            <p>
+              <strong>Nom&nbsp;:</strong> PlanetarySolvency.com<br />
+              <strong>Type&nbsp;:</strong> actif numérique stratégique (nom de domaine .com)<br />
+              <strong>Positionnement&nbsp;:</strong> gouvernance globale, actuariat, risques systémiques
+              climat &amp; nature, banques centrales, superviseurs, institutions financières,
+              coalitions internationales.
+            </p>
+            <p>
+              La cession peut porter sur le domaine seul, ou s’articuler avec un package plus large
+              (concept de dashboard / observatoire, intégration avec la galaxie Solvency —
+              <b>ClimateSolvency.com</b>, <b>NatureSolvency.com</b>, <b>WaterSolvency.com</b>,
+              <b>EnergySolvency.com</b>, <b>ComputeSolvency.com</b>).
+            </p>
+            <p>
+              Les modalités (NDA, prix, séquestre, transfert technique) suivent un schéma classique
+              de transaction stratégique à forte valeur.
+            </p>
+          </section>
+
+          <div class="disclaimer">
+            <p><strong>Important — Nature de l’actif</strong></p>
+            <p>
+              PlanetarySolvency.com est un <strong>actif de nommage descriptif</strong>. Ce site ne constitue
+              ni une autorité publique, ni un superviseur financier, ni une agence de notation, ni un
+              label réglementaire, ni un conseil en investissement.
+            </p>
+            <p>
+              Toute initiative utilisant ce nom doit rester conforme aux réglementations applicables
+              (finance, climat, communication institutionnelle) et assumer sa propre gouvernance,
+              ses propres méthodologies et ses responsabilités juridiques.
+            </p>
+          </div>
+        </div>
+
+        <!-- ENGLISH -->
+        <div data-en>
+          <section id="value-en">
+            <h2>Why talk about “Planetary Solvency” now?</h2>
+            <p>
+              Since 2024–2025, <strong>Planetary Solvency</strong> has moved beyond metaphor.
+              It is increasingly used as a <strong>risk framing</strong> by parts of the actuarial
+              and public-policy communities, which highlight breached planetary boundaries and
+              a global dashboard edging towards red.
+            </p>
+            <p>
+              Climate- and nature-related risks are no longer seen as purely environmental issues,
+              but as <strong>macro-financial risks</strong> with the potential to weigh heavily on
+              growth, financial stability and public / private balance sheets.
+            </p>
+            <p>
+              The core question is therefore not only “green finance”, but:
+              <em>how solvent is our planetary system — and thus our economies and societies —
+              under current trajectories?</em>
+            </p>
+          </section>
+
+          <section>
+            <h2>The role of PlanetarySolvency.com</h2>
+            <p>
+              PlanetarySolvency.com is designed as a <strong>strategic naming asset</strong> for:
+            </p>
+            <ul>
+              <li>a global <strong>Planetary Solvency Dashboard</strong> for public and financial leaders;</li>
+              <li>a <strong>Planetary Solvency Observatory</strong> on climate, nature, resources and social stability;</li>
+              <li>a <strong>convergence hub</strong> for actuaries, central banks, supervisors, long-term investors and international coalitions.</li>
+            </ul>
+            <p>
+              The domain offers a neutral, serious, <strong>board-level name</strong> that speaks to
+              ministers, central bank governors, CFOs, CROs and supervisory chairs.
+            </p>
+            <p>
+              It can sit above a broader <strong>Global Solvency Framework</strong> combining assets
+              such as <b>ClimateSolvency.com</b>, <b>NatureSolvency.com</b>, <b>WaterSolvency.com</b>,
+              <b>EnergySolvency.com</b> or <b>ComputeSolvency.com</b>.
+            </p>
+          </section>
+
+          <section>
+            <h2>What can live on PlanetarySolvency.com</h2>
+
+            <h3>1. Planetary Solvency Risk Dashboard</h3>
+            <p>
+              A synthetic dashboard that can:
+            </p>
+            <ul>
+              <li>track how far we move beyond planetary boundaries;</li>
+              <li>combine climate &amp; nature into a single solvency / prosperity view;</li>
+              <li>provide decision-useful green / amber / red signals for boards and policymakers.</li>
+            </ul>
+
+            <h3>2. Observatory &amp; resource hub</h3>
+            <p>
+              The site can act as a reference point for:
+            </p>
+            <ul>
+              <li>key frameworks: planetary boundaries, planetary solvency, climate- and nature-financial risks;</li>
+              <li>reports, scenarios, methodologies and best practices;</li>
+              <li>front-door access to work by actuaries, economists, central banks, supervisors and climate / nature-aligned financial institutions.</li>
+            </ul>
+
+            <h3>3. Multi-stakeholder programme</h3>
+            <p>
+              PlanetarySolvency.com can also brand a <strong>multi-stakeholder initiative</strong>
+              bringing together actuarial bodies, academia, NGFS / TNFD-aligned institutions,
+              regulators, financial institutions, NGOs and coalitions of states.
+            </p>
+          </section>
+
+          <section>
+            <h2>Illustrative use cases</h2>
+            <ul>
+              <li>
+                <strong>Central bank / financial supervisor</strong> – public-facing banner for a
+                “Planetary Solvency &amp; Systemic Risks” programme, publishing scenarios,
+                stress tests, dashboards and macro-prudential policy notes.
+              </li>
+              <li>
+                <strong>Finance ministry / sovereign think tank</strong> – national or regional
+                planetary solvency assessments, aligning climate, nature, energy, social and
+                economic policies with planetary boundaries.
+              </li>
+              <li>
+                <strong>Long-term investor / asset owner</strong> – a Planetary Solvency Investment
+                Framework linking capital allocation, systemic climate / nature risks and
+                long-term stability.
+              </li>
+              <li>
+                <strong>Climate / nature coalition</strong> – anchor for a Planetary Solvency
+                Partnership connecting science, finance, policy and civil society around
+                a shared solvency narrative.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Documents / Briefs</h2>
+            <p>
+              Detailed acquisition brief (2025-11) available in English for
+              Boards, Climate / CO₂, Risk, Actuarial, Data/AI, Finance &amp; Legal teams.
+            </p>
+            <div class="cta-row">
+              <a class="btn-ghost" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
+                👁️ Open Brief (EN)
+              </a>
+              <a class="btn-primary" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-EN-202511.pdf" type="application/pdf">
+                📥 Download (EN, PDF)
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <h2>About the asset &amp; transaction</h2>
+            <p>
+              <strong>Name:</strong> PlanetarySolvency.com<br />
+              <strong>Type:</strong> strategic .com naming asset<br />
+              <strong>Positioning:</strong> global governance &amp; systemic risk, actuarial science,
+              macro-financial analysis, central banks, supervisors, ministries, long-term investors
+              and international coalitions.
+            </p>
+            <p>
+              Possible deal structures range from the domain alone to a broader bundle
+              (dashboard / observatory positioning, integration with the wider Solvency family
+              such as <b>ClimateSolvency.com</b>, <b>NatureSolvency.com</b>, <b>WaterSolvency.com</b>,
+              <b>EnergySolvency.com</b>, <b>ComputeSolvency.com</b>).
+            </p>
+            <p>
+              NDA, pricing, escrow and transfer can follow a standard, secure process
+              for high-value strategic transactions.
+            </p>
+          </section>
+
+          <div class="disclaimer">
+            <p><strong>Important — Nature of the asset</strong></p>
+            <p>
+              PlanetarySolvency.com is a <strong>descriptive naming asset</strong>. This website does
+              not constitute a public authority, a financial supervisor, a rating agency,
+              a regulated label, nor investment advice.
+            </p>
+            <p>
+              Any initiative built on this name must comply with applicable regulations
+              (finance, climate, institutional communication) and retain full responsibility
+              for its own governance, methodologies and legal obligations.
+            </p>
           </div>
         </div>
       </div>
-      <p class="muted">
-        This site does <b>not</b> sell financial products, ratings, advisory or software:
-        only the <b>PlanetarySolvency.com</b> domain name as a descriptive digital asset.
-        The buyer remains fully responsible for content, frameworks, methodologies and regulatory compliance.
-      </p>
-    </section>
 
-    <!-- =============== CONTEXT EN =============== -->
-    <section class="card" style="margin-top:16px" data-en hidden>
-      <h3>“Planetary Solvency” positioning</h3>
-      <p class="muted">
-        PlanetarySolvency.com can sit on top of a broader architecture linking
-        <b>climate, nature, resources, energy and social stability</b> to macro-financial solvency.
-        It can be articulated with thematic solvency framings (for example Climate Solvency,
-        Nature Solvency, Water Solvency, Energy Solvency, Compute Solvency) while this site
-        offers for sale <b>only</b> the PlanetarySolvency.com domain name.
-      </p>
-      <p class="muted">
-        The domain provides a banner readable by <b>Boards, governors, ministers, supervisors
-        and international coalitions</b> that need a common language to discuss solvency
-        at planetary scale.
-      </p>
-    </section>
-
-    <!-- =============== ACQUISITION EN =============== -->
-    <section class="card" style="margin-top:16px" data-en hidden>
-      <h3>Acquisition (secure process)</h3>
-      <p class="muted">
-        Typical flow: NDA &rarr; strategic discussions &rarr; formal offer &rarr; escrow &rarr; domain transfer.
-        The only asset transferred is the <b>PlanetarySolvency.com</b> domain name, with no advisory,
-        modelling or regulated rating services.
-      </p>
-      <a class="btn primary" href="mailto:contact@planetarysolvency.com?subject=PlanetarySolvency.com%20-%20NDA%20%2F%20Offer">
-        Direct contact: contact@planetarysolvency.com
-      </a>
-    </section>
-
-    <!-- =============== DOCS EN =============== -->
-    <section class="card" style="margin-top:16px" data-en hidden>
-      <h3>Documents / Briefs</h3>
-      <p class="muted">
-        Detailed PlanetarySolvency.com acquisition brief (2025-11) available in English
-        for Boards, Climate / CO₂, Risk, Actuarial, Data/AI, Finance &amp; Legal teams.
-      </p>
-      <div class="cta">
-        <a class="btn" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
-          👁️ Open Brief (EN)
-        </a>
-        <a class="btn primary" href="/Acquisition%20Brief%20planetarysolvency-EN-202511.pdf" download="Acquisition-Brief-PlanetarySolvency-EN-202511.pdf" type="application/pdf">
-          📥 Download (EN, PDF)
-        </a>
-      </div>
-    </section>
-
-    <p class="foot muted">
-      © PlanetarySolvency.com — actif numérique descriptif « planetary solvency ». Aucune affiliation avec des
-      agences de notation, régulateurs, banques centrales ou organisations publiques. Usage descriptif uniquement.
-      Pas de conseil juridique, financier, scientifique, prudentiel ou fiscal.
-      — Contact : <a href="mailto:contact@planetarysolvency.com">contact@planetarysolvency.com</a>
-    </p>
+      <footer>
+        <div>© PlanetarySolvency.com — Digital naming asset available for acquisition.</div>
+        <div class="footer-right">
+          Contact : <a href="mailto:contact@planetarysolvency.com">contact@planetarysolvency.com</a>
+        </div>
+      </footer>
+    </main>
   </div>
 
   <script>
     const frBtn = document.getElementById('btn-fr');
     const enBtn = document.getElementById('btn-en');
 
-    function show(lang){
-      document.querySelectorAll('[data-fr]').forEach(n => n.hidden = (lang !== 'fr'));
-      document.querySelectorAll('[data-en]').forEach(n => n.hidden = (lang !== 'en'));
-      frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
-      enBtn.setAttribute('aria-pressed', String(lang === 'en'));
+    const show = (lang) => {
+      document.querySelectorAll('[data-fr]').forEach(node => {
+        node.hidden = (lang !== 'fr');
+      });
+      document.querySelectorAll('[data-en]').forEach(node => {
+        node.hidden = (lang !== 'en');
+      });
+
       frBtn.classList.toggle('active', lang === 'fr');
       enBtn.classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang;
-    }
+      frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
+      enBtn.setAttribute('aria-pressed', String(lang === 'en'));
+
+      document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+    };
 
     frBtn.addEventListener('click', () => show('fr'));
     enBtn.addEventListener('click', () => show('en'));
 
-    const navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    const initialLang = navLang.startsWith('fr') ? 'fr' : 'en';
-    show(initialLang);
+    // Tous les .com : EN par défaut, FR seulement si clic
+    show('en');
   </script>
 </body>
 </html>
